@@ -4,5 +4,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Hello world step
-        run: echo "Hello world!"
+      - name: Clone repository
+        uses: actions/checkout@v6
+        

@@ -2,8 +2,8 @@ name: Run Test
 on: 
   push:
     branches: [main]
-  paths-ignore:
-    - [".github/workflows/**"]
+    paths-ignore:
+      - [".github/workflows/**"]
   workflow_dispatch:
 jobs:
   test:

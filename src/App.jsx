@@ -1,5 +1,5 @@
 import './App.css'
-// this is app component
+// this is app component adding comments to test the ci/cd pipeline using github actions
 function App() {
 
   return (

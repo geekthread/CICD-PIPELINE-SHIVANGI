@@ -1,5 +1,10 @@
 name : Setup Nodejs and install dependencies
 description: This action sets up Node.js and installs dependencies for a project.
+inputs: 
+  node-version:
+    description: 'The version of Node.js to use'
+    required: true
+    default: '22'
 runs:
   using: "composite"
   steps:
@@ -8,7 +13,7 @@ runs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: ${{ inputs.node-version }}
       - name: Cache node modules
         uses: actions/cache@v3
         with:

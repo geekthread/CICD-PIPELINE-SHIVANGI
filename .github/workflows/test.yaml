@@ -25,9 +25,22 @@ jobs:
         uses: ./.github/action/setupcode
       - name: npm build
         run: npm run build
+      - name: Upload dist folder 
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-folder
+          path: dist
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Clone repository
-        uses: actions/checkout@v6
+      - name: Download dist folder
+        uses: actions/download-artifact@v4
+        with:
+          name: dist-folder
+          path: dist
+        name: Deploying dist folder
+        run: |
+          echo "Deploying dist folder..."
+          ls dist/
+          echo "Deployment successful!"

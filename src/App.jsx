@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      <h1>CI/CD using Github Actions</h1>
+      <h1>CI/CD using Github Actions workflows</h1>
       <h2>For beginners v3</h2>
       <h2>With 2 projects</h2>
     </>

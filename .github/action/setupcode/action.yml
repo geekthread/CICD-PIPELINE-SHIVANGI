@@ -3,7 +3,6 @@ description: This action sets up Node.js and installs dependencies for a project
 runs:
   using: "composite"
   steps:
-    teps:
       - name: Clone repository
         uses: actions/checkout@v6
       - name: Setup Node.js

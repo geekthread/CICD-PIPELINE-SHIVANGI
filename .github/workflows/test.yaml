@@ -12,7 +12,7 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v6
       - name: Setup Nodejs and install dependencies
-        uses: ./.github/action/setupcode
+        uses: .github/action/setupcode
 
      
       - name: Run tests
@@ -24,7 +24,7 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v6
       - name: Setup Nodejs and install dependencies
-        uses: ./.github/action/setupcode
+        uses: .github/action/setupcode
       - name: npm build
         run: npm run build
   deploy:

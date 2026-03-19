@@ -1,7 +1,7 @@
-name: Run Test
+name: deploy
 on: 
-  #push:
-   # branches: [main]
+  push:
+    branches: [main]
   workflow_dispatch:
 jobs:
   test:
@@ -31,16 +31,25 @@ jobs:
           name: dist-folder
           path: dist
   deploy:
+    
+    # Add a dependency to the build job
     needs: build
-    runs-on: ubuntu-latest
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    
     steps:
-      - name: Download dist folder
-        uses: actions/download-artifact@v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
         with:
-          name: dist-folder
-          path: dist
-      - name: Deploying dist folder
-        run: |
-          echo "Deploying dist folder..."
-          ls dist/
-          echo "Deployment successful!"
+          token: ${{ secrets.GITHUB_TOKEN }}

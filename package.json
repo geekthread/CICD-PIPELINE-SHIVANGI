@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage":"https://geekthread.github.io/cicd-genai-pipeline",
+  "homepage":"https://geekthread.github.io/CICD-PIPELINE-SHIVANGI",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

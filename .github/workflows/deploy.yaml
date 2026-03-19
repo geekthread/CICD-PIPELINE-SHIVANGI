@@ -28,7 +28,7 @@ jobs:
       - name: Upload dist folder 
         uses: actions/upload-artifact@v4
         with:
-          name: dist-folder
+          name: github-pages 
           path: dist
   deploy:
     runs-on: ubuntu-latest
@@ -42,7 +42,7 @@ jobs:
 
     # Deploy to the github-pages environment
     environment:
-      name: dist-folder
+      name: github-pages 
       url: ${{ steps.deployment.outputs.page_url }}
 
     # Specify runner + deployment step

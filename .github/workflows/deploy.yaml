@@ -24,7 +24,7 @@ jobs:
       - name: Setup Nodejs and install dependencies
         uses: ./.github/action/setupcode
       - name: npm build
-        run: npm run build
+        run: rm -rf dist && npm run build
       - name: Upload dist folder 
         uses: actions/upload-artifact@v4
         with:
